@@ -22,7 +22,7 @@ def text_analizator_rus(text):
 
     df_columns = ['Токены', 'Лемма', 'Часть речи', 'Зависимость', 'Сущность']
     df_data = zip(c_tokens, c_lemma, c_pos, c_dep, c_ent)
-    df_analys_res = pd.DataFrame(df_data, df_columns)
+    df_analys_res = pd.DataFrame(data=df_data, columns=df_columns)
 
     return df_analys_res
 
