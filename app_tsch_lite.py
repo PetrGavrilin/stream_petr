@@ -6,7 +6,7 @@ import matplotlib
 from wordcloud import WordCloud
 ##
 import os  # для импорта токена
-import vk_token  # для импорта токена
+# import vk_token  # для импорта токена
 import vk  # импорт специализированной библиотеки для парсинга текста
 ##
 
