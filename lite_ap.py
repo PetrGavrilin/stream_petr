@@ -36,7 +36,7 @@ def text_analizator_rus(text_in):
 
     text = remove_incor_symbols(text_in)
 
-    nlp_rus = spacy.load('ru_core_news_md')  # модель для русского языка
+    nlp_rus = spacy.load('ru_core_news_sm')  # модель для русского языка
     analysis_result = nlp_rus(text)
 
     c_tokens = [token.text for token in analysis_result]
@@ -101,9 +101,9 @@ def main():
     st.info("Обработка естественного языка (на русском языке)")
     raw_text = st.text_area("Введите текст на русском языке", "поле ввода")
     if st.button("Проанализировать"):
-        st.markdown('raw_text')
+        st.markdown(raw_text)
         text_analizer_rus_st(raw_text)
-        st.markdown('raw_text')
+        st.markdown(raw_text)
 
   
 
