@@ -4,11 +4,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
 from wordcloud import WordCloud
-'''
+
 import os  # для импорта токена
 import vk_token  # для импорта токена
 import vk  # импорт специализированной библиотеки для парсинга текста
-'''
+
 
 matplotlib.use("Agg")
 
