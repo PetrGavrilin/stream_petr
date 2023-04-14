@@ -101,10 +101,9 @@ def main():
     st.info("Обработка естественного языка (на русском языке)")
     raw_text = st.text_area("Введите текст на русском языке", "поле ввода")
     if st.button("Проанализировать"):
-        try:
-            text_analizer_rus_st(raw_text)
-        except:
-            st.markdown('Введённые данные некорректны')
+        st.markdown('raw_text')
+        text_analizer_rus_st(raw_text)
+        st.markdown('raw_text')
 
   
 
