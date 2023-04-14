@@ -35,6 +35,8 @@ def text_analizator_rus(text_in):
     возвращает датафрейм с его характеристиками'''
 
     text = remove_incor_symbols(text_in)
+    
+    $ python -m spacy download ru_core_news_sm
 
     nlp_rus = spacy.load('ru_core_news_sm')  # модель для русского языка
     analysis_result = nlp_rus(text)
