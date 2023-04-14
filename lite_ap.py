@@ -5,7 +5,9 @@ import matplotlib.pyplot as plt
 import matplotlib
 from wordcloud import WordCloud
 ##
-
+import os  # для импорта токена
+import vk_token  # для импорта токена
+import vk  # импорт специализированной библиотеки для парсинга текста
 ##
 
 matplotlib.use("Agg")
@@ -101,12 +103,33 @@ def main():
     st.info("Обработка естественного языка (на русском языке)")
     raw_text = st.text_area("Введите текст на русском языке", "поле ввода")
     if st.button("Проанализировать"):
-        st.markdown(raw_text)
-        text_analizer_rus_st(raw_text)
-        st.markdown(raw_text)
+        try:
+            text_analizer_rus_st(raw_text)
+        except:
+            st.markdown('Введённые данные некорректны')
+'''
+    st.info("Обработка естественного языка (VK)")
+    count = st.slider('Сколько новостных заголовков извлечь?', 1, 100, 5)
+    domain = st.text_input(
+        'Введите короткий адрес пользователя или сообщества "-"', 'habr'
+        )
+    # raw_text = st.text_area("Введите текст на русском языке", "поле ввода")
+    if st.button("Проанализировать новостные заголовки"):
 
-  
+        api = vk.API(access_token=os.getenv('TOKEN'))  # адрес токена вк
+        posts = api.wall.get(domain=domain, count=count, v=5.151)
+        # -15755094, 20629724
 
+        all_news = []  # переменная для добавления всех заголовков новостями
+        for post in posts['items']:
+            all_news.append(post['text'])  # добавляю все заголовки в один
+
+        try:
+            text_analizer_rus_st(str(all_news))
+            # подаём на функцию данные одновременно переводя их в тип str
+        except:
+            st.markdown('Что-то пошло не так')
+'''
     st.sidebar.subheader('''Исполнители: группа №2:
     Зайцев Александр Васильевич
     Чурилов Алексей Александрович
