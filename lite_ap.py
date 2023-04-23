@@ -38,7 +38,7 @@ def text_analizator_rus(text_in):
 
     text = remove_incor_symbols(text_in)
 
-    nlp_rus = spacy.load('ru_core_news_lg')  # модель для русского языка
+    nlp_rus = spacy.load('ru_core_news_md')  # модель для русского языка
     analysis_result = nlp_rus(text)
 
     c_tokens = [token.text for token in analysis_result]
@@ -84,7 +84,7 @@ def text_analizer_rus_st(text_in, part_of_speach=["NOUN", "VERB"]):
     return None
 
 
-def main():
+def main_for_all(vk_api):
     """"""
 # st.title('!!! Добро пожаловать !!!')
 
@@ -115,11 +115,10 @@ def main():
         )
 
     if st.button("Проанализировать новостные заголовки"):
-
+        
         try:
             api = vk.API(access_token=os.getenv('TOKEN'))  # адрес токена вк
             posts = api.wall.get(domain=domain, count=count, v=5.151)
-            # -15755094, 20629724
 
             all_news = []  # список для добавления всех заголовков новостями
             for post in posts['items']:
@@ -139,6 +138,3 @@ def main():
 
     return None
 
-
-if __name__ == '__main__':
-    main()
