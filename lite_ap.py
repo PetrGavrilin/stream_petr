@@ -106,7 +106,7 @@ def main_for_all(vk_api):
         try:
             text_analizer_rus_st(raw_text)
         except:
-            st.markdown('Введённые данные некорректны')
+            st.markdown(raw_text)
 
     st.info("Обработка естественного языка (VK)")
     count = st.slider('Сколько новостных заголовков извлечь?', 1, 100, 5)
