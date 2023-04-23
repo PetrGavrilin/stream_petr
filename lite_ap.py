@@ -117,7 +117,7 @@ def main_for_all(vk_api):
     if st.button("Проанализировать новостные заголовки"):
         
         try:
-            api = vk.API(access_token=os.getenv('TOKEN'))  # адрес токена вк
+            api = vk_api  # адрес токена вк
             posts = api.wall.get(domain=domain, count=count, v=5.151)
 
             all_news = []  # список для добавления всех заголовков новостями
