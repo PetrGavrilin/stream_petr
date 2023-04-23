@@ -1,4 +1,6 @@
-import subprocess
+import vk  # импорт специализированной библиотеки для парсинга текста
+import lite_ap
+
 
 def main():
     
@@ -9,8 +11,6 @@ def main():
     lite_ap.main_for_all(api_for)
     
     return None
-
-
 
 if __name__ == '__main__':
     main()
