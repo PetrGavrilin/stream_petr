@@ -1,12 +1,14 @@
 import subprocess
 
 def main():
-
-    subprocess.call("lite_ap.py", shell=True)
+    
+    import lite_ap.py as la
 
     api_for = vk.API(access_token=token)  # адрес токена вк
 
-    main_for_all(api_for)
+    la.main_for_all(api_for)
+    
+    return None
 
 
 
