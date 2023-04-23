@@ -4,7 +4,7 @@ def main():
 
     subprocess.call("lite_ap.py", shell=True)
 
-    api_for = vk.API(access_token=os.getenv('TOKEN'))  # адрес токена вк
+    api_for = vk.API(access_token=token)  # адрес токена вк
 
     main_for_all(api_for)
 
