@@ -2,7 +2,7 @@ import subprocess
 
 def main():
     
-    import lite_ap.py
+    import lite_ap
 
     api_for = vk.API(access_token=token)  # адрес токена вк
 
