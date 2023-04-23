@@ -2,11 +2,11 @@ import subprocess
 
 def main():
     
-    import lite_ap.py as la
+    import lite_ap.py
 
     api_for = vk.API(access_token=token)  # адрес токена вк
 
-    la.main_for_all(api_for)
+    lite_ap.main_for_all(api_for)
     
     return None
 
