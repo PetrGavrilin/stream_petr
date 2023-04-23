@@ -8,7 +8,7 @@ import vk  # импорт специализированной библиоте�
 def main():
     
     try:
-        api_for = vk.API(access_token=token)  # адрес токена вк
+        api_for = 'vk.API(access_token=token)'  # команда для вызова токена
     except:  
         api_for = None
 
